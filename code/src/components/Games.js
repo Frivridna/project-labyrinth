@@ -10,10 +10,10 @@ const Games = () => {
   const userName = useSelector(store => store.games.username)
   const error = useSelector(store => store.games.error)
   const loading = useSelector(store => store.games.loading)
-
+  
   return (
     <main className="main-container">
-
+    
       {error && `Ups, something went wrong, reason : ${error}`}
       {loading && <Loader />}
       {userName &&  <Header />}
@@ -21,6 +21,7 @@ const Games = () => {
           ? <GameScreen />
           : <StartScreen /> 
       }
+      
     </main>
   )
 }
